@@ -1,0 +1,45 @@
+Router
+no ip domain-lookup
+security password min-length 10
+enable secret angliamarketing1
+line con 0
+password angliamarketing1
+exec-timeout 5 0
+login
+logging synchronous
+exit
+
+line vty 0 4
+password angliamarketing1
+exec-timeout 5 0
+login
+logging synchronous
+exit
+service password-encryption
+banner motd #Unauthorised Access Prohibited!#
+exit
+clock set 21:00:00 10 Dec 2019
+-----------------------
+Switch
+no ip domain-lookup
+enable secret angliamarketing1
+line con 0
+password angliamarketing1
+login
+logging synchronous
+exit
+
+line vty 0 4
+password angliamarketing1
+login
+logging synchronous
+exit
+enable secret angliamarketing
+exit
+
+
+
+
+
+
+
